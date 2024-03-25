@@ -16,7 +16,7 @@
 #include "camera_pins.h"
 #include "sd_read_write.h"
 
-constexpr uint8_t FlashPin = 21;
+constexpr uint8_t FlashPin = 47;
 constexpr uint16_t take_pic_every_millis = 3000;
 
 void setup() {
