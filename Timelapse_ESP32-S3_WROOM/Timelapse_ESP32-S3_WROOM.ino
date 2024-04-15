@@ -4,10 +4,12 @@
   the sample code which you can download at www.freenove.com and should 
   work at similar Boards to (untested). 
   Without changes it should NOT work at AI Thinker and other Boards with 
-  a limited amount of pins, because i add a signal for an external flash
-  at GPO21.
+  a limited amount of pins. because i add a signal for an external flash
+  at GPO47.
 
-  Auther      : Herbert Kozuschnik (based at freenove example)
+  Select "ESP32-S3 Dev Module" at Boards Manager. 
+
+  Author      : herbk https://github.com/herbkonik/Timelapse-ESP32S3-WROOM
   Last Update : 2024/03/24
 **********************************************************************/
 
@@ -17,12 +19,13 @@
 #include "sd_read_write.h"
 
 constexpr uint8_t FlashPin = 47;
-constexpr uint16_t take_pic_every_millis = 3000;
+constexpr uint16_t take_pic_every_millis = 3000;            // Change value to change the time between two pics
 
 void setup() {
   pinMode(FlashPin, OUTPUT);
+  digitalWrite(FlashPin, LOW);
   sdmmcInit();
-  createDir(SD_MMC, "/camera");
+  createDir(SD_MMC, "/camera");                             
   listDir(SD_MMC, "/camera", 0);
   if (cameraSetup() == 0) {
     return;
