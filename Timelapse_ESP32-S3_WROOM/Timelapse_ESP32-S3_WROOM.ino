@@ -72,7 +72,24 @@ int cameraSetup(void) {
   config.pin_pwdn = PWDN_GPIO_NUM;
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
-  config.frame_size = FRAMESIZE_UXGA;
+    
+  // uncomment the desired framesize
+
+  //  config.frame_size = FRAMESIZE_96X96;    // 96x96
+  //  config.frame_size = FRAMESIZE_QQVGA;    // 160x120
+  //  config.frame_size = FRAMESIZE_QCIF;     // 176x144
+  //  config.frame_size = FRAMESIZE_HQVGA;    // 240x176
+  //  config.frame_size = FRAMESIZE_240X240;  // 240x240
+  //  config.frame_size = FRAMESIZE_QVGA;     // 320x240
+  //  config.frame_size = FRAMESIZE_CIF;      // 400x296
+  //  config.frame_size = FRAMESIZE_HVGA;     // 480x320
+  //  config.frame_size = FRAMESIZE_VGA;      // 640x480
+  //  config.frame_size = FRAMESIZE_SVGA;     // 800x600
+  //  config.frame_size = FRAMESIZE_XGA:      // 1024x768
+  //  config.frame_size = FRAMESIZE_HD;       // 1280x720
+  //  config.frame_size = FRAMESIZE_SXGA;     // 1280x1024
+  config.frame_size = FRAMESIZE_UXGA;  // 1600x1200
+
   config.pixel_format = PIXFORMAT_JPEG;  // for streaming
   config.grab_mode = CAMERA_GRAB_WHEN_EMPTY;
   config.fb_location = CAMERA_FB_IN_PSRAM;
